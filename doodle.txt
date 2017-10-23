@@ -1,5 +1,6 @@
 This is where I am going to put all kinds of crazy nonsense
 
+CREATE DATABASE chore_tracker;
 
 CREATE TABLE parent_users
 (
