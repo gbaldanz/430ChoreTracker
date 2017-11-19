@@ -171,26 +171,26 @@
                                     // Check connection
                                     ?>
                                     <?php
-                                    if ($conn->connect_error) {
+                                    if ($conn-&gt;connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
                                     } 
                                     ?>
 
                                     <?php
                                     $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
-                                    $result = $conn->query($sql);
+                                    $result = $conn-&gt;query($sql);
 
-                                    if ($result->num_rows > 0) {
+                                    if ($result-&gt;num_rows &gt; 0) {
                                         echo "<table class = "table"><thead><tr class="text-success"><th>Name</th><th>Points</th><th>Description</th></tr>";
                                         // output data of each row
-                                        while($row = $result->fetch_assoc()) {
+                                        while($row = $result-&gt;fetch_assoc()) {
                                             echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]." ".$row["NOTES"]."</td></tr>";
                                         }
                                         echo "</table>";
                                     } else {
                                         echo "0 results";
                                     }
-                                    $conn->close();
+                                    $conn-&gt;close();
                                     ?>
                                 </div>
                             </div>
