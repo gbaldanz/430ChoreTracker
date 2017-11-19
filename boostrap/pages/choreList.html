@@ -175,7 +175,7 @@
                                     ?>
 
                                     <?php
-                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
+                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES;";
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
