@@ -169,13 +169,15 @@
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);
                                     // Check connection
+                                    ?>
+                                    <?php
                                     if ($conn->connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
                                     } 
                                     ?>
 
                                     <?php
-                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES;";
+                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
