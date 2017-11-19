@@ -156,54 +156,44 @@
 
 
                 <div class="content-wrapper">
-                    <h3 class="text-primary mb-4">Chore List</h3>
+                    <h3 class="text-primary mb-4">Reward List</h3>
                     <div class="row">
                         <div class="col-lg-6 mb-4">
                             <div class="card">
                                 <div class="card-block">
                                     <h5 class="card-title mb-4">Table with contextual classes</h5>
-                                    <table class="table">
-                                        <thead>
-                                            <tr class="text-primary">
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="table-active">
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr class="table-success">
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr class="table-warning">
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            <tr class="table-danger">
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr class="table-info">
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <?php
+                                    $servername = "localhost";
+                                    $username = "gbaldanz";
+                                    $password = "CPSC430_Fall17project";
+                                    $dbname = "CPSC430_Fall17project1";
+
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                        echo "Failure in connecting to the database";
+                                        die("Connection failed: " . $conn->connect_error);
+                                    }
+                                    
+                                    $sql = "SELECT NAME, VALUE, NOTES FROM REWARDS";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                    ?>
+                                        <table class = "table"><tr class="text-success"><th>ID</th><th>Name</th></tr>
+                                    <?php
+                                        // output data of each row
+                                        while($row = $result->fetch_assoc()) {
+                                            echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]."</td></tr>";
+                                        }
+                                        echo "</table>";
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    $conn->close();
+                                    
+                                    ?>
                                 </div>
                             </div>
                         </div>
