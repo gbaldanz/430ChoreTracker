@@ -170,23 +170,10 @@
                                     $conn = new mysqli($servername, $username, $password, $dbname);
                                     // Check connection
                                     if ($conn->connect_error) {
+                                        echo "Failure in connecting to the database";
                                         die("Connection failed: " . $conn->connect_error);
                                     } 
 
-                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
-                                    $result = $conn->query($sql);
-
-                                    if ($result->num_rows > 0) {
-                                        echo "<table class = "table"><thead><tr class="text-success"><th>Name</th><th>Points</th><th>Description</th></tr>";
-                                        // output data of each row
-                                        while($row = $result->fetch_assoc()) {
-                                            echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]." ".$row["NOTES"]."</td></tr>";
-                                        }
-                                        echo "</table>";
-                                    } else {
-                                        echo "0 results";
-                                    }
-                                    $conn->close();
                                     ?>
                                 </div>
                             </div>
