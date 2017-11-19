@@ -172,12 +172,14 @@
                                     if ($conn->connect_error) {
                                         echo "Failure in connecting to the database";
                                         die("Connection failed: " . $conn->connect_error);
-                                    } 
+                                    } else {
+                                        echo "Successful connection?";
+                                    }
 
                                     $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
                                     $result = $conn->query($sql);
                                     
-                                    echo result;
+                                    echo "$result";
                                     ?>
                                 </div>
                             </div>
