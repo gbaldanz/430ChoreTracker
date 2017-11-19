@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../pages/choreList.html">
+                            <a class="nav-link" href="../pages/choreList.php">
                                 <!-- <i class="fa fa-wpforms"></i> -->
                                 <img src="../images/icons/3.png" alt="">
                                 <span class="menu-title">Chore List</span>
@@ -169,14 +169,10 @@
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);
                                     // Check connection
-                                    ?>
-                                    <?php
                                     if ($conn-&gt;connect_error) {
                                         die("Connection failed: " . $conn->connect_error);
                                     } 
-                                    ?>
 
-                                    <?php
                                     $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
                                     $result = $conn-&gt;query($sql);
 
