@@ -161,32 +161,7 @@
                                 <div class="card-block">
                                     <h5 class="card-title mb-4">Table with contextual classes</h5>
                                     <?php
-                                    $servername = "localhost";
-                                    $username = "gbaldanz";
-                                    $password = "CPSC430_Fall17project";
-                                    $dbname = "CPSC430_Fall17project1";
-
-                                    // Create connection
-                                    $conn = new mysqli($servername, $username, $password, $dbname);
-                                    // Check connection
-                                    if ($conn-&gt;connect_error) {
-                                        die("Connection failed: " . $conn->connect_error);
-                                    } 
-
-                                    $sql = "SELECT NAME, VALUE, NOTES FROM CHORES";
-                                    $result = $conn-&gt;query($sql);
-
-                                    if ($result-&gt;num_rows &gt; 0) {
-                                        echo "<table class = "table"><thead><tr class="text-success"><th>Name</th><th>Points</th><th>Description</th></tr>";
-                                        // output data of each row
-                                        while($row = $result-&gt;fetch_assoc()) {
-                                            echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]." ".$row["NOTES"]."</td></tr>";
-                                        }
-                                        echo "</table>";
-                                    } else {
-                                        echo "0 results";
-                                    }
-                                    $conn-&gt;close();
+                                    echo "hello world";
                                     ?>
                                 </div>
                             </div>
