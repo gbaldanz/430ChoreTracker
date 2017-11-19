@@ -178,7 +178,7 @@
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
-                                        echo "<table class = "table"><tr><th>ID</th><th>Name</th></tr>";
+                                        echo "<table><tr class="text-success"><th>ID</th><th>Name</th></tr>";
                                         // output data of each row
                                         while($row = $result->fetch_assoc()) {
                                             echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]."</td></tr>";
