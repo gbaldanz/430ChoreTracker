@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="shortcut icon" href="../images/favicon.png" />
+    <style>
+.card-title{
+    text-align:center;
+}
+.card-text{
+    padding-left:10px;
+}
+    </style>
+
 </head>
 
 <body>
@@ -157,9 +166,8 @@
                     <h3 class="text-primary mb-4">Chore List</h3>
                     <div class="row">
                         <div class="col-lg-6 mb-4">
-                            <div class="card">
-                                <div class="card-block">
-                                    <h5 class="card-title mb-4">Table with contextual classes</h5>
+                                <div class="card-group">
+                                    
                                     <?php
                                     $servername = "localhost";
                                     $username = "gbaldanz";
@@ -179,13 +187,20 @@
 
                                     if ($result->num_rows > 0) {
                                     ?>
-                                        <table class = "table"><tr class="text-success"><th>ID</th><th>Name</th></tr>
                                     <?php
                                         // output data of each row
                                         while($row = $result->fetch_assoc()) {
-                                            echo "<tr><td>".$row["NAME"]."</td><td>".$row["VALUE"]."</td></tr>";
+                                       
+
+                                        echo '<div class="card-block">
+                                            <div class="card">
+                                                <div class="card-title"><h5>'.$row['NAME'].'</h5></div>
+                                                <p class="card-text" style="font-family:verdana padding-left:5px">COST: '.$row['VALUE'].'</p>
+                                                <p class="card-text"><small class="text-muted">Notes: '.$row['NOTES'].'</small></p>
+                                                <input class="btn btn-primary" type="submit" value="Submit">
+                                            </div>
+                                        </div>' ;
                                         }
-                                        echo "</table>";
                                     } else {
                                         echo "0 results";
                                     }
@@ -194,7 +209,6 @@
                                     ?>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 <footer class="footer">
                     <div class="container-fluid clearfix">
