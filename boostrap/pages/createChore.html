@@ -58,7 +58,7 @@
                                 <span class="menu-title">Home</span>
                             </a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="../pages/myFamily.html">
                                 <img src="../images/icons/2.png" alt="">
                                 <span class="menu-title">My Family</span>
@@ -92,7 +92,7 @@
                                 <span class="menu-title">Add Reward</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="../pages/createChore.html">
                                 <!-- <i class="fa fa-font"></i> -->
                                 <img src="../images/icons/7.png" alt="">
@@ -164,9 +164,16 @@
                                     <h5 class="card-title mb-4">Create a Chore!</h5>
                                     <form class="forms-sample">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control p-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted text-success"><span class="fa fa-info mt-1"></span>&nbsp; We'll never share your email with anyone else.</small>
+                                            <label for="choreName">CHORE NAME</label>
+                                            <input type="text" class="form-control p-input" id="choreName" placeholder="Chore Name">
+                                            <label for="choreCost">CHORE COST</label>
+                                            <input type="number" class="form-control p-input" id="choreCost" placeholder="Chore Cost">
+                                            <label for="choreNotes">CHORE NOTES</label>
+                                            <input type="text" class="form-control p-input" id="choreNotes" placeholder="Chore Notes">
+
+
+
+
                                         </div>
                                     <?php
                                     $servername = "localhost";
